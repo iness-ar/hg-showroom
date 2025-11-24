@@ -1,0 +1,248 @@
+/* ------------------------------------------- */
+/* 1. VARIABEL WARNA KUSTOM (COKSU & DARK) */
+/* ------------------------------------------- */
+:root {
+    --sidebar-width: 250px; /* Variabel untuk lebar sidebar */
+    --main-bg-color: #1a1c38;
+    --sidebar-bg-color: #15172b;
+    --card-bg-color: #232747;
+    --active-item-color: #bfa07e; /* Cokelat Susu Utama */
+    --price-color: #d4b89b; /* Cokelat Susu Lebih Terang */
+    --text-light: #e0e0e0;
+}
+
+/* 2. KELAS UTILITAS KUSTOM UNTUK WARNA */
+.bg-main-dark { background-color: var(--main-bg-color) !important; }
+.bg-sidebar-dark { background-color: var(--sidebar-bg-color) !important; }
+.bg-card-dark { background-color: var(--card-bg-color) !important; }
+.bg-coksu-main { background-color: var(--active-item-color) !important; }
+.text-coksu-light { color: var(--price-color) !important; }
+.border-line { background-color: rgba(255, 255, 255, 0.1); height: 1px; margin: 1rem 0; }
+
+/* 3. PENYESUAIAN LAYOUT UTAMA */
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* 4. SIDEBAR NAVIGATION CUSTOM STYLES */
+.sidebar-nav {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-nav i {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-nav.active {
+    background-color: var(--active-item-color);
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.sidebar-nav:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* 5. GAYA FIXED SIDEBAR BARU */
+.sidebar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    z-index: 1030; 
+    overflow-y: auto; 
+}
+
+/* 6. MAIN CONTENT WRAPPER OFFSET BARU */
+.main-content-wrapper {
+    margin-left: var(--sidebar-width); 
+    min-height: 100vh;
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* 7. GAYA GAMBAR PADA KARTU */
+.car-image-container {
+    width: 100%;
+    height: 150px; 
+    overflow: hidden;
+    background-color: #3e445b; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+.car-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.car-image-container .placeholder-text {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* 8. PENYESUAIAN UNTUK TINGGI KARTU SAMA */
+.row-cols-auto > * {
+    flex-grow: 1;
+}
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+/* Mendorong tombol ke bagian bawah kartu */
+.card-body .mt-auto {
+    margin-top: auto !important; 
+}
+.card-body .text-coksu-light {
+    min-height: 24px;
+}
+.card-body .car-name-main {
+    min-height: 30px;
+}
+
+/* 9. RESPONSIVENESS */
+@media (max-width: 992px) {
+    .sidebar-fixed {
+        position: relative; /* Sidebar kembali normal di layar kecil */
+        width: 100% !important;
+        height: auto;
+        overflow-y: visible;
+    }
+    .main-content-wrapper {
+        margin-left: 0; /* Tidak ada offset di layar kecil */
+        width: 100%;
+    }
+}/* ============================
+   WARNA & UTILITY STYLE
+============================ */
+.text-brown { color: #c7a07a !important; } /* DIUBAH DARI #5D4037 */
+.bg-brown { background-color: #c7a07a !important; color: #fff !important; } /* DIUBAH DARI #5D4037 */
+.bg-brown-light { background-color: #f7f0e7 !important; color: #c7a07a !important; } /* DIUBAH KE WARNA SANGAT TERANG */
+.btn-outline-brown { color: #c7a07a; border-color: #c7a07a; } /* DIUBAH DARI #5D4037 */
+.btn-outline-brown:hover { background-color: #c7a07a; color: #fff; } /* DIUBAH DARI #5D4037 */
+.border-brown { border-color: #c7a07a !important; } /* DIUBAH DARI #5D4037 */
+
+/* ============================
+   SIDEBAR WRAPPER & LAYOUT
+============================ */
+#wrapper { overflow-x: hidden; }
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 15rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 4.5rem;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-left: 15rem;
+    transition: all 0.3s ease;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    padding-left: 4.5rem;
+}
+
+
+/* ============================
+   SIDEBAR TEXT & ALIGNMENT
+============================ */
+.sidebar-item-text {
+    display: inline;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+#wrapper.toggled .sidebar-item-text {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+#sidebar-wrapper .list-group-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group-item {
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    justify-content: center;
+}
+
+#wrapper.toggled #sidebar-wrapper .sidebar-heading .sidebar-item-text {
+    display: none;
+}
+
+
+/* ============================
+   CARD HOVER EFFECT
+============================ */
+.card-hover-effect {
+    border: 1px solid transparent;
+    transition: transform 0.3s ease-in-out, 
+                 box-shadow 0.3s ease-in-out, 
+                 border-color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    z-index: 10;
+    border: 1px solid #c7a07a; /* DIUBAH DARI #5D4037 */
+}
+
+
+/* ============================
+   IMAGE ASPECT RATIO 4:3
+============================ */
+.aspect-ratio-4x3 {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+}
+
+.aspect-ratio-4x3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

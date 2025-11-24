@@ -1,0 +1,202 @@
+:root {
+    --bs-brown: #5D4037; 
+}
+
+.text-brown { color: #5D4037 !important; }
+.bg-brown { background-color: #5D4037 !important; color: #fff !important; }
+.bg-brown-light { background-color: #D7CCC8 !important; color: #5D4037 !important; }
+
+.btn-outline-brown { 
+    color: #5D4037; 
+    border-color: #5D4037; 
+}
+.btn-outline-brown:hover { 
+    background-color: #5D4037 !important; 
+    border-color: #5D4037 !important; 
+    color: #fff !important; 
+}
+
+.btn-brown {
+    background-color: #5D4037; 
+    color: #fff;
+    border-color: #5D4037;
+}
+.btn-brown:hover {
+    background-color: #4e342e; 
+    border-color: #4e342e;
+    color: #fff;
+}
+
+.btn-white-to-outline {
+    background-color: white !important;
+    color: #5D4037 !important;
+    border: 1px solid white !important;
+    transition: all 0.3s ease;
+}
+
+.btn-white-to-outline:hover {
+    background-color: white !important;
+    color: #5D4037 !important;
+    border-color: #5D4037 !important;
+}
+
+.border-brown { border-color: #5D4037 !important; }
+
+#wrapper { overflow-x: hidden; }
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 15rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 4.5rem;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-left: 15rem;
+    transition: all 0.3s ease;
+    padding-top: 0; /* TELAH DIPERBAIKI */
+}
+
+#wrapper.toggled #page-content-wrapper {
+    padding-left: 4.5rem;
+}
+
+.sidebar-item-text {
+    display: inline;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+#wrapper.toggled .sidebar-item-text {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.card-hover-effect {
+    border: 1px solid transparent;
+    transition: transform 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out, 
+        border-color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    z-index: 10;
+    border: 1px solid #5D4037;
+}
+
+.tombol-wrapper {
+    display: inline-block; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.tombol-wrapper:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important; 
+}
+
+.aspect-ratio-4x3 {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+}
+
+.aspect-ratio-4x3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-thumbnail-4x3 {
+    width: 80px;
+    height: 60px;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    border: 1px solid #ddd;
+}
+
+#mobile-warning {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #5D4037;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 991.98px) {
+    #wrapper {
+        display: none !important;
+    }
+
+    #mobile-warning {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+
+.btn-outline-brown:focus,
+.btn-outline-brown:active,
+.btn-outline-brown.focus {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.btn-outline-brown {
+    --bs-btn-focus-shadow-rgb: 0, 0, 0 !important; 
+}
+
+.btn-brown:focus,
+.btn-brown:active,
+.btn-brown.focus {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.btn-brown {
+    --bs-btn-focus-shadow-rgb: 0, 0, 0 !important;
+}
+
+.tombol-wrapper:focus,
+.tombol-wrapper:active {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.btn-white-to-outline:focus,
+.btn-white-to-outline:active,
+.btn-white-to-outline.focus {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.btn-white-to-outline {
+    --bs-btn-focus-shadow-rgb: 0, 0, 0 !important;
+}
