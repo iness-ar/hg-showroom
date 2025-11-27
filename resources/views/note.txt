@@ -1,0 +1,19 @@
+<div class="list-group list-group-flush pt-2">
+    <a href="{{ route('dashboard') }}" 
+       class="list-group-item list-group-item-action text-brown py-3 {{ request()->routeIs('dashboard') ? 'bg-brown-light active' : '' }}">
+        <i class="bi bi-car-front me-2 fs-5"></i>
+        <span class="sidebar-item-text">Dashboard (Data Mobil)</span>
+    </a>
+
+    <a href="{{ route('arsip') }}" 
+       class="list-group-item list-group-item-action text-brown py-3 {{ request()->routeIs('arsip') ? 'bg-brown-light active' : '' }}">
+        <i class="bi bi-archive me-2 fs-5"></i>
+        <span class="sidebar-item-text">Arsip (Mobil Terjual)</span>
+    </a>
+
+    <a href="{{ route('riwayat') }}" 
+       class="list-group-item list-group-item-action text-brown py-3 {{ request()->routeIs('riwayat') ? 'bg-brown-light active' : '' }}">
+        <i class="bi bi-receipt me-2 fs-5"></i>
+        <span class="sidebar-item-text">Riwayat Transaksi</span>
+    </a>
+</div>

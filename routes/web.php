@@ -13,3 +13,6 @@ Route::resource('mobil', MobilController::class);
 Route::get('/arsip', function () {
     return view('arsip');
 });
+Route::get('/login', function () {
+    return view('login');
+});

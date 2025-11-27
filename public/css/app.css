@@ -1,0 +1,33 @@
+:root {
+    --bs-brown: #5D4037; 
+    --bs-light-brown: #A1887F; 
+}
+.bg-brown { background-color: var(--bs-brown) !important; }
+.text-brown { color: var(--bs-brown) !important; }
+.btn-outline-brown {
+    color: var(--bs-brown);
+    border-color: var(--bs-brown);
+}
+.btn-outline-brown:hover {
+    color: #fff;
+    background-color: var(--bs-brown);
+    border-color: var(--bs-brown);
+}
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card {
+    max-width: 400px;
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.form-control:focus {
+    border-color: var(--bs-light-brown);
+    box-shadow: 0 0 0 0.25rem rgba(93, 64, 55, 0.25);
+}

@@ -55,14 +55,14 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 4.5rem;
+    width: 3.5rem;
 }
 
 #page-content-wrapper {
     width: 100%;
     padding-left: 15rem;
     transition: all 0.3s ease;
-    padding-top: 0; /* TELAH DIPERBAIKI */
+    padding-top: 0
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -200,3 +200,24 @@
 .btn-white-to-outline {
     --bs-btn-focus-shadow-rgb: 0, 0, 0 !important;
 }
+
+.sidebar-logo {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+.sidebar-icon-small {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+#wrapper.toggled .sidebar-logo {
+    display: none;
+} 
+#wrapper.toggled .sidebar-icon-small {
+    display: block;
+    opacity: 1;
+}
+
+

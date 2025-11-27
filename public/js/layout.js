@@ -44,3 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("wrapper").classList.add("toggled");
+});

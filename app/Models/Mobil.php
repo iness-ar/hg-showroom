@@ -9,7 +9,7 @@ class Mobil extends Model
 {
     use HasFactory;
 
-    protected $table = 'mobils';
+    protected $table = 'tb_mobil';
 
     protected $guarded = [];
 

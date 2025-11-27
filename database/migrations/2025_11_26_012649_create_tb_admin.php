@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('tb_admin', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 255)->unique(); // Pastikan username unik
-            $table->string('password', 255); // Untuk menyimpan hash password
-            $table->timestamps(); // kolom created_at dan updated_at
+            $table->string('username', 255)->unique();
+            $table->string('password', 255);
+            $table->string('email', 255)->unique()->nullable();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
