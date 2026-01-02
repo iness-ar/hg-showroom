@@ -18,7 +18,6 @@ return new class extends Migration
             
             // Foreign Key ke tb_merk
             $table->foreignId('id_merk')->constrained('tb_merk')->onDelete('cascade');
-            
             $table->year('tahun');
             $table->decimal('harga_beli', 15, 2);
             $table->decimal('harga_jual', 15, 2);

@@ -6,33 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('tb_transaksi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mobil_id')->constrained('tb_mobil')->onDelete('restrict');
             $table->string('nama_pembeli', 255);
-            $table->string('nomor_telepon', 255);
-            $table->string('alamat', 255);
-            
-           
-            $table->foreignId('user_id')->constrained('tb_admin')->onDelete('restrict');
-
-            $table->dateTime('tanggal_transaksi');
-            $table->enum('tipe_transaksi', ['Cash', 'Kredit']);
-            $table->decimal('total_pembelian', 15, 2);
-            $table->enum('status_penjualan', ['Pending', 'Selesai', 'Batal']);
-            $table->string('keterangan', 255)->nullable();
-            
+            $table->string('nomor_telepon', 255)->nullable();
+            $table->text('alamat');
+            $table->date('tanggal_transaksi');
+            $table->enum('tipe_transaksi', ['Online', 'Offline', 'Dropship']);
+            $table->bigInteger('total_pembelian');
+            $table->enum('status_penjualan', ['Lunas', 'Belum Lunas', 'Dibatalkan', 'Dalam Proses']);
+            $table->text('keterangan')->nullable();
+            $table->string('bukti')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('tb_transaksi');

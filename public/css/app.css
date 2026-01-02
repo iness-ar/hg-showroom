@@ -2,32 +2,89 @@
     --bs-brown: #5D4037; 
     --bs-light-brown: #A1887F; 
 }
-.bg-brown { background-color: var(--bs-brown) !important; }
-.text-brown { color: var(--bs-brown) !important; }
-.btn-outline-brown {
-    color: var(--bs-brown);
-    border-color: var(--bs-brown);
-}
-.btn-outline-brown:hover {
-    color: #fff;
-    background-color: var(--bs-brown);
-    border-color: var(--bs-brown);
-}
+
 body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter', sans-serif;
 }
+
+.bg-brown { background-color: var(--bs-brown) !important; }
+.text-brown { color: var(--bs-brown) !important; }
+
+.btn-outline-brown {
+    color: var(--bs-brown);
+    border: 1px solid var(--bs-brown);
+}
+.btn-outline-brown:hover {
+    color: #fff;
+    background-color: var(--bs-brown);
+}
+
 .login-card {
-    max-width: 400px;
     width: 100%;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    padding: 2rem 2.5rem; 
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    min-height: 350px;
+    animation: fadeInUp .7s ease-out;
 }
-.form-control:focus {
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-floating input {
+    border-radius: 12px;  
+    padding: 0.75rem 1rem; 
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    transition: all .3s;
+    font-size: 0.95rem;
+}
+.form-floating label {
+    color: #6d4c41;
+    font-weight: 500;
+}
+
+.form-floating input:focus {
     border-color: var(--bs-light-brown);
-    box-shadow: 0 0 0 0.25rem rgba(93, 64, 55, 0.25);
+    box-shadow: 0 0 0 5px rgba(93,64,55,0.2);
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8d6e63;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.btn-premium {
+    background: linear-gradient(135deg, #6d4c41, #5D4037);
+    color: #fff;
+    padding: 0.7rem; 
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    font-size: 0.95rem;
+    transition: all .25s ease;
+}
+
+.btn-premium:hover {
+    opacity: .92;
+    transform: translateY(-2px);
+    box-shadow:#fff;
+
 }
